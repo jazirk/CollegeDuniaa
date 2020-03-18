@@ -1,0 +1,304 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'DINPro';
+  src: url("fonts/DINPro-Regular_13937.woff") format("woff"), url("fonts/DINPro-Regular_13937.ttf") format("truetype");
+  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+  font-family: 'MyriadPro-regular';
+  src: url("fonts/MYRIADPRO-REGULAR.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'MyriadPro-bold';
+  src: url("fonts/MYRIADPRO-BOLD.woff") format("woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: DINPro;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-size: 62.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 35px;
+}
+
+.college {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px;
+}
+
+.college__card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 600px;
+      grid-template-columns: 600px;
+  -ms-grid-rows: 234px 143px;
+      grid-template-rows: 234px 143px;
+      grid-template-areas: "image" "details";
+  border-radius: 3.8px;
+  -webkit-box-shadow: 0 0 19px 0 rgba(68, 68, 68, 0.1);
+          box-shadow: 0 0 19px 0 rgba(68, 68, 68, 0.1);
+  border: solid 0.2px #444444;
+  background-color: #ffffff;
+  margin: 20px;
+}
+
+.college__card-image {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: image;
+  position: relative;
+}
+
+.college__card-details {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: details;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "left" "right";
+}
+
+.college__info-pills {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 13.5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.college__info-pill {
+  padding: 5px;
+  min-width: 93px;
+  height: 34px;
+  border-radius: 16.5px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 5px;
+}
+
+.college__info-rating {
+  width: 75px;
+  height: 53px;
+  border-radius: 3.8px;
+  background-color: #f5a626;
+  position: absolute;
+  top: -151px;
+  right: -339px;
+  color: white;
+  font-weight: bold;
+  padding: 3px;
+}
+
+.college__info-rating p {
+  text-align: center;
+}
+
+.college__info-rate {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.college__info-promotion {
+  position: absolute;
+  top: -197px;
+  right: -360px;
+  width: 152px;
+  height: 33px;
+  background-color: #68a7ff;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+  -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 15% 50%, 0% 0%);
+          clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 15% 50%, 0% 0%);
+}
+
+.college__info-position {
+  position: absolute;
+  bottom: 10px;
+  right: -339px;
+  color: white;
+  font-weight: bold;
+  font-size: 13.5px;
+}
+
+.college__details {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 13.5px;
+}
+
+.college__details-name {
+  font-size: 18.5px;
+  font-weight: bold;
+  color: #444444;
+  margin-left: 10px;
+}
+
+.college__details-address {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #444444;
+  margin-left: 10px;
+}
+
+.college__details-distance {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #adadad;
+}
+
+.college__details-distance strong {
+  color: #000000;
+}
+
+.college__details-match {
+  font-size: 13.5px;
+  color: #37b396;
+  margin-left: 10px;
+}
+
+.college__details-offer {
+  min-width: 200px;
+  max-width: 350px;
+  height: 35px;
+  background-color: #ccf5e7;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding: 5px 5px 5px 10px;
+}
+
+.college__details-offer span {
+  color: #37b396;
+  font-weight: bold;
+}
+
+.college__details-offer span:last-of-type {
+  color: #2a81e2;
+}
+
+.college__details-amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+}
+
+.college__details-fee span {
+  font-size: 11px;
+  text-decoration: line-through;
+}
+
+.college__details-off {
+  background-color: #dd1c26;
+  width: 29px;
+  height: 14px;
+  font-size: 11px;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  margin-left: 5px;
+  -webkit-clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
+          clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+.college__details-discount {
+  font-size: 28.5px;
+  font-weight: bold;
+  color: #dd1c26;
+}
+
+.college__details-semester {
+  color: #444444;
+  font-size: 11px;
+}
+
+.college__details-cancellation {
+  color: #37b396;
+  font-weight: bold;
+  font-size: 13.5px;
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+}
+/*# sourceMappingURL=styles.css.map */

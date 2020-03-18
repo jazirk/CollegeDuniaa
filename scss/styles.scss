@@ -1,0 +1,235 @@
+@font-face {
+    font-family: 'DINPro';
+    src: url('fonts/DINPro-Regular_13937.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+     url('fonts/DINPro-Regular_13937.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+@font-face {
+    font-family: 'MyriadPro-regular';
+    src: url('fonts/MYRIADPRO-REGULAR.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}  
+@font-face {
+    font-family: 'MyriadPro-bold';
+    src: url('fonts/MYRIADPRO-BOLD.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@mixin flex($display,$align,$justify,$direction:row)
+{
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction:$direction;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: DINPro;
+}
+
+body{
+    width:100vw;
+    height: 100vh;
+    font-size: 62.5%;
+    @include flex(flex,center ,center ,column );
+}
+
+.container{
+    position: relative;
+}
+.title{
+    position: absolute;
+    top: 0;
+    left: 35px;
+
+}
+
+.college{
+    display: flex;
+    margin: 20px;
+
+    &__card{
+        display: grid;
+        grid-template-columns: 600px;
+        grid-template-rows: 234px 143px;
+        grid-template-areas: "image" "details";
+        border-radius: 3.8px;
+        box-shadow: 0 0 19px 0 rgba(68, 68, 68, 0.1);
+        border: solid 0.2px #444444;
+        background-color: #ffffff;
+        margin: 20px;
+       
+        &-image{
+            grid-area: image;
+            position: relative;
+        }
+
+        &-details{
+            grid-area: details;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: "left" "right";
+        }
+    }
+
+    &__info{
+        &-pills{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            font-size: 13.5px;
+            display: flex;
+        }
+        &-pill{
+            padding: 5px;
+            min-width: 93px;
+            height: 34px;
+            border-radius: 16.5px;
+            background-color: #ffffff;
+            @include flex(flex,center ,center ,column );
+            margin: 5px;
+        }
+        &-rating{
+            width: 75px;
+            height: 53px;
+            border-radius: 3.8px;
+            background-color: #f5a626;
+            position: absolute;
+            top: -151px;
+            right: -339px;
+            color: white;
+            font-weight: bold;
+            padding: 3px;
+
+            p{
+                text-align: center ;
+            }
+        }
+        &-rate{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        &-promotion{
+            position: absolute;
+            top: -197px;
+            right: -360px;
+            width: 152px;
+            height: 33px;
+            background-color: #68a7ff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 15px;
+            clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 15% 50%, 0% 0%);
+        }
+        &-position{
+            position:absolute;
+            bottom: 10px;
+            right: -339px;
+            color: white;
+            font-weight: bold;
+            font-size: 13.5px;
+        }
+        }
+    &__details{
+        grid-area: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-size: 13.5px;
+
+        &-name{
+            font-size: 18.5px;
+            font-weight: bold;
+            color: #444444;
+            margin-left: 10px;
+        }
+        &-address{
+            font-size: 13.5px;
+            font-weight: 500;
+            color: #444444;
+            margin-left: 10px;
+        }
+        &-distance{
+            font-size: 13.5px;
+            font-weight: 500;
+            color: #adadad;
+
+            strong{
+                color: #000000;
+            }
+        }
+        &-match{
+            font-size: 13.5px;
+            color: #37b396;
+            margin-left: 10px;
+        }
+        &-offer{
+            min-width: 200px;
+            max-width: 350px;
+            height: 35px;
+            background-color: #ccf5e7;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            padding: 5px 5px 5px 10px;
+
+            span{
+                color: #37b396;
+                font-weight: bold;
+
+                &:last-of-type{
+                    color: #2a81e2;
+                }
+            }
+
+        }
+        &-amount{
+            display: flex;
+            margin-right: 15px;
+            flex-direction: column;
+            align-items: flex-end;
+            position: relative;
+        }
+        &-fee{
+            span{
+                font-size: 11px;
+                text-decoration: line-through;
+            }
+            }
+        &-off{
+            background-color:#dd1c26;
+            width: 29px;
+            height: 14px;
+            font-size: 11px;
+            display: inline-block;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+            margin-left: 5px;
+            clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
+        
+        }  
+        &-discount{
+            font-size: 28.5px;
+            font-weight: bold;
+            color: #dd1c26;
+        }
+        &-semester{
+            color: #444444;
+            font-size: 11px;
+        }
+        &-cancellation{
+            color: #37b396;
+            font-weight: bold;
+            font-size: 13.5px;
+            position: absolute;
+            right: 0;
+            bottom: 15px;
+        } 
+    }
+}
